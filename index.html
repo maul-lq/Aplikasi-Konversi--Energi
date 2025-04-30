@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Konversi Energi Makanan</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(to right, #f8ffae, #43c6ac);
+            min-height: 100vh;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .container {
+            background: white;
+            padding: 2rem;
+            border-radius: 1rem;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+            width: 300px;
+            text-align: center;
+        }
+
+        h1 {
+            margin-bottom: 1rem;
+            font-size: 24px;
+            color: #333;
+        }
+
+        .input-group {
+            margin-bottom: 1rem;
+            text-align: left;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: bold;
+        }
+
+        input {
+            width: 100%;
+            padding: 0.5rem;
+            border: 1px solid #aaa;
+            border-radius: 0.5rem;
+        }
+
+        button {
+            padding: 0.7rem 1.5rem;
+            background-color: #43c6ac;
+            border: none;
+            color: white;
+            font-weight: bold;
+            border-radius: 0.5rem;
+            cursor: pointer;
+            margin-top: 1rem;
+        }
+
+            button:hover {
+                background-color: #36b3a0;
+            }
+
+        .result {
+            margin-top: 1.5rem;
+            font-size: 18px;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Konversi Energi Makanan</h1>
+        <p>Masukkan jumlah gram untuk setiap komponen makanan:</p>
+
+        <div class="input-group">
+            <label for="lemak">Lemak (gram):</label>
+            <input type="number" id="lemak" min="0" placeholder="Contoh: 10">
+        </div>
+
+        <div class="input-group">
+            <label for="protein">Protein (gram):</label>
+            <input type="number" id="protein" min="0" placeholder="Contoh: 15">
+        </div>
+
+        <div class="input-group">
+            <label for="karbohidrat">Karbohidrat (gram):</label>
+            <input type="number" id="karbohidrat" min="0" placeholder="Contoh: 20">
+        </div>
+
+        <div class="input-group">
+            <label for="mineral">Mineral (gram):</label>
+            <input type="number" id="mineral" min="0" placeholder="Contoh: 5">
+        </div>
+
+        <button onclick="hitungKalori()">Hitung Kalori</button>
+
+        <div class="result" id="hasil"></div>
+    </div>
+
+    <script>
+        function hitungKalori() {
+            const lemak = parseFloat(document.getElementById('lemak').value) || 0;
+            const protein = parseFloat(document.getElementById('protein').value) || 0;
+            const karbohidrat = parseFloat(document.getElementById('karbohidrat').value) || 0;
+            const mineral = parseFloat(document.getElementById('mineral').value) || 0;
+
+            const kaloriLemak = lemak * 9;
+            const kaloriProtein = protein * 4;
+            const kaloriKarbohidrat = karbohidrat * 4;
+            const kaloriMineral = 0; // Mineral tidak menghasilkan kalori
+
+            const totalKalori = kaloriLemak + kaloriProtein + kaloriKarbohidrat;
+
+            const hasil = `
+            <p><strong>Hasil Konversi:</strong></p>
+            <ul style="text-align: left;">
+              <li>Lemak: ${kaloriLemak} Kalori</li>
+              <li>Protein: ${kaloriProtein} Kalori</li>
+              <li>Karbohidrat: ${kaloriKarbohidrat} Kalori</li>
+              <li>Mineral: ${kaloriMineral} Kalori</li>
+            </ul>
+            <p><strong>Total Energi: ${totalKalori} Kalori</strong></p>
+          `;
+
+            document.getElementById('hasil').innerHTML = hasil;
+        }
+    </script>
+</body>
+</html>
