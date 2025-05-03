@@ -16,7 +16,17 @@
                 <small>Masukkan jumlah gram pada setiap komponen di bawah ini.</small>
             </div>
 
-            <form onsubmit="hitungKalori(); return false;" style="display: flex; flex-direction: column; height: 100%;">
+            <style>
+                .prob1
+                {
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    height: 100%;
+                }
+            </style>
+
+            <form class="prob1" onsubmit="hitungKalori(); return false;">
                 <div class="form-grid">
                     <div class="input-group">
                         <label for="lemak">

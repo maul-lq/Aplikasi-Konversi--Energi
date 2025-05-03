@@ -34,7 +34,7 @@ function hitungKalori() {
     // Menghitung kalori dari karbohidrat (karbohidrat * 4 kalori per gram)
     const kaloriKarbohidrat = karbohidrat * 4;
     // Mineral tidak menghasilkan kalori, sehingga nilainya 0
-    const kaloriMineral = 0; 
+    const kaloriMineral = mineral * 0; 
 
     // Menjumlahkan kalori yang didapat dari lemak, protein, dan karbohidrat untuk mendapatkan total kalori
     const totalKalori = kaloriLemak + kaloriProtein + kaloriKarbohidrat;
