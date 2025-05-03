@@ -26,11 +26,9 @@ function hitungKalori() {
     const hasilDiv = document.getElementById('hasil');
     hasilDiv.innerHTML = hasil;
     hasilDiv.classList.remove('show');
-    // trigger reflow for animation restart
     void hasilDiv.offsetWidth;
     hasilDiv.classList.add('show');
 
-    // Tambahkan class show-result ke main-flex
     const mainFlex = document.querySelector('.main-flex');
     if (mainFlex && !mainFlex.classList.contains('show-result')) {
         mainFlex.classList.add('show-result');
