@@ -39,17 +39,21 @@ function hitungKalori() {
     // Menjumlahkan kalori yang didapat dari lemak, protein, dan karbohidrat untuk mendapatkan total kalori
     const totalKalori = kaloriLemak + kaloriProtein + kaloriKarbohidrat;
 
+    function formatAngka(angka, n) {
+        return Number.isInteger(angka) ? angka : angka.toFixed(n);
+    }
+    
     // Membuat template HTML untuk menampilkan hasil konversi energi
     const hasil = `
         <div class="result-icon">⚡</div>
         <div class="result-title">Hasil Konversi Energi</div>
         <ul>
-          <li><span>Lemak</span>: <b>${kaloriLemak}</b> Kalori</li>
-          <li><span>Protein</span>: <b>${kaloriProtein}</b> Kalori</li>
-          <li><span>Karbohidrat</span>: <b>${kaloriKarbohidrat}</b> Kalori</li>
-          <li><span>Mineral</span>: <b>${kaloriMineral}</b> Kalori</li>
+          <li><span>Lemak</span>: <b>${formatAngka(kaloriLemak,3)}</b> Kalori</li>
+          <li><span>Protein</span>: <b>${formatAngka(kaloriProtein,3)}</b> Kalori</li>
+          <li><span>Karbohidrat</span>: <b>${formatAngka(kaloriKarbohidrat,3)}</b> Kalori</li>
+          <li><span>Mineral</span>: <b>${formatAngka(kaloriMineral,3)}</b> Kalori</li>
         </ul>
-        <span class="total-energi">Total Energi: <b>${totalKalori}</b> Kalori</span>
+        <span class="total-energi">Total Energi: <b>${formatAngka(totalKalori,3)}</b> Kalori</span>
     `;
 
     // Mengambil elemen dengan id 'hasil'
