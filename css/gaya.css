@@ -1,3 +1,11 @@
+/*
+Kode CSS berikut berfungsi untuk mengatur tampilan dasar halaman web:
+- Menetapkan jenis huruf halaman menggunakan 'Arial' dan fallback sans-serif.
+- Mengaplikasikan background dengan gradasi diagonal dari warna #f8ffae ke #43c6ac.
+- Menetapkan tinggi minimal halaman agar selalu setinggi viewport.
+- Menghapus margin default agar tidak terjadi spasi di sekitar halaman.
+- Menggunakan Flexbox untuk memusatkan konten secara horizontal (justify-content: center) dan vertikal (align-items: center).
+*/
 body {
     font-family: 'Arial', sans-serif;
     background: linear-gradient(135deg, #f8ffae 0%, #43c6ac 100%);
@@ -8,6 +16,11 @@ body {
     align-items: center;
 }
 
+/* 
+   Styling untuk elemen container utama.
+   Mengatur background dengan transparansi, padding, border-radius, box-shadow, dan layout flex.
+   Terdapat juga properti animasi dan transisi untuk pergerakan container.
+*/
 .container {
     background: rgba(255,255,255,0.85);
     padding: 2.5rem 2rem 2rem 2rem;
@@ -31,11 +44,19 @@ body {
     left: 0;
 }
 
+/* 
+   Keyframes untuk animasi fadeIn.
+   Membuat elemen muncul secara perlahan dengan efek transisi dari bawah ke posisi semula.
+*/
 @keyframes fadeIn {
-    from { opacity: 0; transform: translateY(30px);}
-    to { opacity: 1; transform: translateY(0);}
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
 }
 
+/* 
+   Styling khusus untuk ikon yang ada di dalam container.
+   Menerapkan ukuran font besar, margin bawah, serta animasi popIn.
+*/
 .container .icon {
     font-size: 3rem;
     margin-bottom: 0.5rem;
@@ -43,12 +64,20 @@ body {
     animation: popIn 0.8s cubic-bezier(.68,-0.55,.27,1.55);
 }
 
+/* 
+   Keyframes untuk animasi popIn.
+   Elemen akan muncul dengan efek scale dari kecil ke ukuran normal disertai perubahan opacity.
+*/
 @keyframes popIn {
-    0% { transform: scale(0.5); opacity: 0;}
-    80% { transform: scale(1.2);}
-    100% { transform: scale(1); opacity: 1;}
+    0% { transform: scale(0.5); opacity: 0; }
+    80% { transform: scale(1.2); }
+    100% { transform: scale(1); opacity: 1; }
 }
 
+/* 
+   Styling untuk judul (h1).
+   Mengatur margin, ukuran font, warna, spasi antar huruf, dan ketebalan huruf.
+*/
 h1 {
     margin-bottom: 1rem;
     font-size: 24px;
@@ -57,6 +86,10 @@ h1 {
     font-weight: 700;
 }
 
+/* 
+   Styling untuk deskripsi dengan kelas .desc.
+   Mengatur ukuran font, warna, margin, serta pengaturan teks agar rata tengah.
+*/
 .desc {
     font-size: 15px;
     color: #666;
@@ -64,6 +97,10 @@ h1 {
     text-align: center;
 }
 
+/* 
+   Styling untuk grid form.
+   Menggunakan display grid dengan dua kolom dan gap untuk jarak antar elemen.
+*/
 .form-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -74,12 +111,20 @@ h1 {
     column-gap: 1rem;
 }
 
+/* 
+   Styling untuk grup input.
+   Mengatur margin, penempatan relatif, dan perataan teks ke kiri.
+*/
 .input-group {
     margin-bottom: 0;
     text-align: left;
     position: relative;
 }
 
+/* 
+   Styling untuk elemen label.
+   Mengatur tampilan flex agar label dan ikon/teks terkait rata, serta penambahan gap dan pointer cursor.
+*/
 label {
     display: flex;
     align-items: center;
@@ -89,11 +134,19 @@ label {
     cursor: pointer;
 }
 
+/* 
+   Styling untuk elemen tooltip.
+   Elemen ini digunakan untuk menampilkan teks informasi ketika pengguna hover pada elemen tertentu.
+*/
 .tooltip {
     display: inline-block;
     position: relative;
 }
 
+/* 
+   Styling untuk teks dalam tooltip.
+   Mengatur agar teks tooltip tersembunyi secara default dan muncul dengan transisi opacity ketika hover.
+*/
 .tooltip .tooltiptext {
     visibility: hidden;
     width: 140px;
@@ -118,6 +171,10 @@ label {
     opacity: 1;
 }
 
+/* 
+   Styling dasar untuk elemen input.
+   Mengatur lebar, padding, border, dan border-radius untuk input secara umum.
+*/
 input {
     width: 100%;
     padding: 0.5rem;
@@ -125,6 +182,10 @@ input {
     border-radius: 0.5rem;
 }
 
+/* 
+   Styling khusus untuk input dengan tipe "number".
+   Menambahkan background transparan, transisi pada border dan bayangan, serta menghilangkan outline.
+*/
 input[type="number"] {
     background: rgba(67,198,172,0.07);
     transition: border 0.2s, box-shadow 0.2s;
@@ -137,6 +198,10 @@ input[type="number"]:focus {
     box-shadow: 0 0 0 2px #43c6ac33;
 }
 
+/* 
+   Styling untuk elemen tombol.
+   Mengatur padding, background linear gradient, border, warna teks, border-radius, serta efek hover dan bayangan.
+*/
 button {
     padding: 0.7rem 1.5rem;
     background: linear-gradient(90deg, #43c6ac 60%, #191654 100%);
@@ -160,6 +225,10 @@ button:hover {
     transform: translateY(-2px) scale(1.04);
 }
 
+/* 
+   Styling untuk kontainer hasil dengan kelas .result.
+   Mengatur tampilan elemen hasil termasuk background, bayangan, border, padding, layout flex dan animasi awal.
+*/
 .result {
     margin-top: 0;
     font-size: 18px;
@@ -182,6 +251,10 @@ button:hover {
     transition: opacity 0.5s, transform 0.5s;
 }
 
+/* 
+   Styling ::before pada .result.
+   Menambahkan elemen dekoratif berbentuk gradien yang posisinya absolute.
+*/
 .result::before {
     content: "";
     position: absolute;
@@ -193,6 +266,10 @@ button:hover {
     z-index: 1;
 }
 
+/* 
+   Styling untuk ikon hasil di dalam .result.
+   Mengatur ukuran, warna, margin, alignment, dan animasi popIn.
+*/
 .result .result-icon {
     font-size: 2.2rem;
     color: #43c6ac;
@@ -206,6 +283,10 @@ button:hover {
     margin-top: 0.2rem;
 }
 
+/* 
+   Styling untuk judul bagian hasil.
+   Mengatur ukuran font, ketebalan, warna, margin dan alignment teks.
+*/
 .result-title {
     font-size: 1.15rem;
     font-weight: 700;
@@ -217,6 +298,10 @@ button:hover {
     position: relative;
 }
 
+/* 
+   Styling untuk elemen list (ul) di dalam .result.
+   Menghapus padding dan margin default, serta mengatur layout flex dengan gap antar item.
+*/
 .result ul {
     padding-left: 0;
     margin: 0 0 1.2rem 0;
@@ -230,6 +315,10 @@ button:hover {
     gap: 0.5rem;
 }
 
+/* 
+   Styling untuk setiap elemen list item di dalam .result.
+   Mengatur margin, ukuran font, warna dan menambahkan bullet point khusus menggunakan ::before.
+*/
 .result li {
     margin-bottom: 0;
     font-size: 15px;
@@ -248,6 +337,10 @@ button:hover {
     margin-right: 0.5em;
 }
 
+/* 
+   Styling untuk elemen dengan kelas .total-energi di dalam .result.
+   Mengatur tampilan blok dengan padding, bayangan, border-radius dan animasi popIn.
+*/
 .result .total-energi {
     display: block;
     color: #191654;
@@ -266,17 +359,29 @@ button:hover {
     animation: popIn 0.7s cubic-bezier(.68,-0.55,.27,1.55);
 }
 
+/* 
+   Styling untuk kondisi saat .result ditampilkan.
+   Mengubah opacity dan transform agar elemen tampak dengan animasi slide-in.
+*/
 .result.show {
     opacity: 1;
     transform: translateX(0);
     animation: slideInRight 0.7s cubic-bezier(.68,-0.55,.27,1.55);
 }
 
+/* 
+   Keyframes untuk animasi slideInRight.
+   Elemen akan muncul dengan perpindahan posisi dari kanan ke posisi semula.
+*/
 @keyframes slideInRight {
-    from { opacity: 0; transform: translateX(40px);}
-    to { opacity: 1; transform: translateX(0);}
+    from { opacity: 0; transform: translateX(40px); }
+    to { opacity: 1; transform: translateX(0); }
 }
 
+/* 
+   Styling untuk container utama dengan layout flex untuk mengatur posisi pusat.
+   Mengatur ukuran viewport, alignment, dan overflow.
+*/
 .main-flex {
     position: relative;
     width: 100vw;
@@ -290,6 +395,10 @@ button:hover {
     transition: justify-content 0.5s;
 }
 
+/* 
+   Styling untuk container yang memuat hasil.
+   Posisi absolute untuk menempatkan di tengah dan transisi untuk efek muncul.
+*/
 .result-container {
     position: absolute;
     top: 50%;
@@ -307,6 +416,10 @@ button:hover {
     transition: opacity 0.5s, transform 0.7s cubic-bezier(.68,-0.55,.27,1.55);
 }
 
+/* 
+   Styling untuk container utama ketika hasil ditampilkan.
+   Untuk layout responsif, elemen container dan hasil bergeser posisinya.
+*/
 .main-flex.show-result {
     /* justify-content: flex-start; */
     gap: 1.2rem;
@@ -323,6 +436,10 @@ button:hover {
     transition-delay: 0.1s;
 }
 
+/* 
+   Media Query untuk layar dengan lebar maksimum 900px.
+   Mengatur ulang layout menjadi kolom sehingga elemen akan tersusun secara vertikal untuk tampilan yang lebih kecil.
+*/
 @media (max-width: 900px) {
     .main-flex,
     .main-flex.show-result {
@@ -353,6 +470,10 @@ button:hover {
     }
 }
 
+/* 
+   Media Query untuk layar dengan lebar maksimum 500px.
+   Penyederhanaan styling container, grid form, dan penyesuaian ukuran font agar sesuai dengan layar ponsel kecil.
+*/
 @media (max-width: 500px) {
     .container {
         padding: 1.2rem 0.5rem 1.2rem 0.5rem;
