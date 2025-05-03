@@ -12,7 +12,7 @@ function hitungKalori() {
     const totalKalori = kaloriLemak + kaloriProtein + kaloriKarbohidrat;
 
     const hasil = `
-    <div class="result-icon">🍽️</div>
+    <div class="result-icon">⚡</div>
     <div class="result-title">Hasil Konversi Energi</div>
     <ul>
       <li><span>Lemak</span>: <b>${kaloriLemak}</b> Kalori</li>
